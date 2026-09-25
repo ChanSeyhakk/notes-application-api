@@ -25,12 +25,14 @@ builder.Services.AddCors(options =>
     options.AddPolicy("VueClient", policy =>
     {
         policy
-            .WithOrigins("http://localhost:5173")
+            .WithOrigins(
+                "http://localhost:5173",
+                "https://chanseyhakk.github.io"
+            )
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
 });
-
 
 // ========================================
 // 3. JWT Authentication
